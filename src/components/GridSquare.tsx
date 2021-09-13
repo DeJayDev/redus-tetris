@@ -1,5 +1,4 @@
-// initalize a functional component
-import React from 'react';
+import '../css/GridSquare.css'
 
 function GridSquare(props: any) {
     const classes = `grid-square color-${props.color}`

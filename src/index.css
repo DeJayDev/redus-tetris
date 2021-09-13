@@ -44,30 +44,6 @@ code {
     monospace;
 }
 
-.grid-board {
-  display: grid;
-  grid-template-columns: repeat(var(--cols), var(--tile-size));
-  grid-gap: 0;
-  align-self: flex-start;
-}
-
-.grid-square {
-  border-style: solid;
-  width: var(--tile-size);
-  height: var(--tile-size);
-  border-width: var(--border-width);
-  border-left-color: var(--border-left-color);
-  border-top-color: var(--border-top-color);
-  border-right-color: var(--border-right-color);
-  border-bottom-color: var(--border-bottom-color);
-}
-
-.next-block {
-  display: grid;
-  grid-template-columns: repeat(4, var(--tile-size));
-  align-self: flex-start;
-}
-
 .color-0 {
   background-color: var(--color-0);
 }

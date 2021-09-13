@@ -1,4 +1,6 @@
 import GridSquare from "./GridSquare"
+import '../css/NextBlock.css'
+import { Fragment } from "react"
 
 function NextBlock(props: any) {
     const box = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
@@ -9,11 +11,11 @@ function NextBlock(props: any) {
         })
     })
 
-    return (
+    return <Fragment>
         <div className="next-block">
             {grid}
         </div>
-    )
+        </Fragment>
 
 }
 

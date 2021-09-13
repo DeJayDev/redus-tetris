@@ -1,4 +1,5 @@
 import GridSquare from "./GridSquare";
+import '../css/GridBoard.css'
 
 function GridBoard(props: any) {
 
