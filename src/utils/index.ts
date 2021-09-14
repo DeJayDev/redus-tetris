@@ -25,7 +25,7 @@ export const nextRotation = (shape: any, rotation: number) => { // TODO: Review 
     return (rotation + 1) % shapes[shape].length
 }
 
-export const canMoveTo = (shape: any, grid: any, x: number, y: number, rotation: number) => {
+export const canMoveTo = (shape: any, grid: any, x: number, y: number, rotation: number) => { // TODO: Review this any
     const currentShape = shapes[shape][rotation]
     // Loop through all rows and cols of the **shape**
     for (let row = 0; row < currentShape.length; row++) {

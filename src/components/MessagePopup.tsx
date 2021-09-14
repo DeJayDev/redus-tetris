@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import '../css/MessagePopup.css'
 import { RootState } from '../reducers'
 
-function MessagePopup(props: any) {
+function MessagePopup() {
     const isRunning = useSelector((state: RootState) => state.game.isRunning)
     const gameOver = useSelector((state: RootState) => state.game.gameOver)
 
