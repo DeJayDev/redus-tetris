@@ -21,7 +21,7 @@ function MessagePopup(props: any) {
 	return <Fragment>
 		<div className={`message-popup ${isHidden}`}>
 			<h1>Message Title</h1>
-			<p>Message Content</p>
+			<p>{message}</p>
 		</div>
 	</Fragment>
 }
