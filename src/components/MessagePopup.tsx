@@ -20,7 +20,7 @@ function MessagePopup() {
 
     return <Fragment>
         <div className={`message-popup ${isHidden}`}>
-            <h1>Message Title</h1>
+            <h1>Hey!</h1>
             <p>{message}</p>
         </div>
     </Fragment>

@@ -28,8 +28,10 @@ export const nextRotation = (shape: any, rotation: number) => { // TODO: Review 
 
 export const canMoveTo = (shape: any, grid: any, x: number, y: number, rotation: number) => { // TODO: Review this any
     const currentShape = shapes[shape][rotation]
+    // Get the width and height of the grid
     const gridWidth = grid[0].length - 1
     const gridHeight = grid.length - 1
+    // Loop over the shape array
     for (let row = 0; row < currentShape.length; row++) {
         for (let col = 0; col < currentShape[row].length; col++) {
             // If this value is not zero it's part of a shape
@@ -37,9 +39,6 @@ export const canMoveTo = (shape: any, grid: any, x: number, y: number, rotation:
                 // x and y offsets on grid
                 const proposedX = col + x
                 const proposedY = row + y
-                if (proposedY < 0) {
-                    continue
-                }
                 // Get possible row, if this is undefined we're out of bounds (top)
                 const possibleRow = grid[proposedY]
                 // Check row exists
@@ -47,7 +46,7 @@ export const canMoveTo = (shape: any, grid: any, x: number, y: number, rotation:
                     return false
                 } else if (possibleRow !== undefined) {
                     // Check if this column in the row is undefined, if it's off the edges, 0, and empty
-                    if (possibleRow[proposedX] === undefined || possibleRow[proposedX] !== 0) {
+                    if (possibleRow[proposedX] !== 0) {
                         // undefined or not 0 and it's occupied we can't move here.
                         return false
                     }
