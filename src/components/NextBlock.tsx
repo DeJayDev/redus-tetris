@@ -1,21 +1,27 @@
-import GridSquare from "./GridSquare"
+import React from 'react'
+
+import { Fragment } from 'react'
 import '../css/NextBlock.css'
-import { Fragment } from "react"
+import GridSquare from './GridSquare'
+import { useSelector } from 'react-redux'
+import { shapes } from '../utils'
+import { RootState } from '../reducers'
 
-function NextBlock(props: any) {
-    const box = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
+function NextBlock() {
+	const nextShape = useSelector((state: RootState) => state.game.nextShape)
+	const box = shapes[nextShape][0]
 
-    const grid = box.map((rowArray, row) => {
-        return rowArray.map((square, col) => {
-            return <GridSquare key={`${row}${col}`} color={square} />
-        })
-    })
+	const grid = box.map((rowArray, row) => {
+		return rowArray.map((square, col) => {
+			return <GridSquare key={`${row}${col}`} color={square} />
+		})
+	})
 
-    return <Fragment>
-        <div className="next-block">
-            {grid}
-        </div>
-        </Fragment>
+	return <Fragment>
+		<div className="next-block">
+			{grid}
+		</div>
+	</Fragment>
 
 }
 

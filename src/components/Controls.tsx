@@ -1,31 +1,31 @@
-import { Fragment } from "react";
+import { Fragment } from 'react'
 import '../css/Controls.css'
 
 function Controls(props: any) {
-    return <Fragment>
-        <div className="controls">
-            {/* left */}
-            <button className="control-button" onClick={(e) => {
+	return <Fragment>
+		<div className="controls">
+			{/* left */}
+			<button className="control-button" onClick={(e) => {
 
-            }}>Left</button>
+			}}>Left</button>
 
-            {/* right */}
-            <button className="control-button" onClick={(e) => {
+			{/* right */}
+			<button className="control-button" onClick={(e) => {
 
-            }}>Right</button>
+			}}>Right</button>
 
-            {/* rotate */}
-            <button className="control-button" onClick={(e) => {
+			{/* rotate */}
+			<button className="control-button" onClick={(e) => {
 
-            }}>Rotate</button>
+			}}>Rotate</button>
 
-            {/* down */}
-            <button className="control-button" onClick={(e) => {
+			{/* down */}
+			<button className="control-button" onClick={(e) => {
 
-            }}>Down</button>
+			}}>Down</button>
 
-        </div>
-    </Fragment>
+		</div>
+	</Fragment>
 }
 
-export default Controls;
+export default Controls
