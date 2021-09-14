@@ -8,29 +8,29 @@ export const MOVE_DOWN  = 'MOVE_DOWN'  // Move piece down
 export const GAME_OVER  = 'GAME_OVER'  // The game is over
 
 export const moveRight = () => {
-	return { type: MOVE_RIGHT }
+    return { type: MOVE_RIGHT }
 }
 
 export const moveLeft = () => {
-	return { type: MOVE_LEFT }
+    return { type: MOVE_LEFT }
 }
 
 export const rotate = () => {
-	return { type: ROTATE }
+    return { type: ROTATE }
 }
 
 export const moveDown = () => {
-	return { type: MOVE_DOWN }
+    return { type: MOVE_DOWN }
 }
 
 export const pause = () => {
-	return { type: PAUSE }
+    return { type: PAUSE }
 }
 
 export const resume = () => {
-	return { type: RESUME }
+    return { type: RESUME }
 }
 
 export const restart = () => {
-	return { type: RESTART }
+    return { type: RESTART }
 }

@@ -4,26 +4,26 @@ import '../css/MessagePopup.css'
 import { RootState } from '../reducers'
 
 function MessagePopup(props: any) {
-	const isRunning = useSelector((state: RootState) => state.game.isRunning)
-	const gameOver = useSelector((state: RootState) => state.game.gameOver)
+    const isRunning = useSelector((state: RootState) => state.game.isRunning)
+    const gameOver = useSelector((state: RootState) => state.game.gameOver)
 
-	let message = ''
-	let isHidden = 'hidden'
+    let message = ''
+    let isHidden = 'hidden'
   
-	if (gameOver) {
-		message = 'Game Over'
-		isHidden = ''
-	} else if (!isRunning) {
-		message = 'Paused'
-		isHidden = ''
-	}
+    if (gameOver) {
+        message = 'Game Over'
+        isHidden = ''
+    } else if (!isRunning) {
+        message = 'Paused'
+        isHidden = ''
+    }
 
-	return <Fragment>
-		<div className={`message-popup ${isHidden}`}>
-			<h1>Message Title</h1>
-			<p>{message}</p>
-		</div>
-	</Fragment>
+    return <Fragment>
+        <div className={`message-popup ${isHidden}`}>
+            <h1>Message Title</h1>
+            <p>{message}</p>
+        </div>
+    </Fragment>
 }
 
 export default MessagePopup
