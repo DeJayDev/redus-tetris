@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-case-declarations */
 import { GAME_OVER, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, PAUSE, RESTART, RESUME, ROTATE } from '../actions'
-import { addBlockToGrid, canMoveTo, checkRows, defaultState, nextRotation, randomShape } from '../utils'
+import { addBlockToGrid, canMoveTo, checkRows, defaultState, nextRotation } from '../utils'
 
 const gameReducer = (state = defaultState(), action: any) => { // TODO: Review this any
     const { shape, grid, x, y, rotation, nextShape, score, isRunning } = state
@@ -69,7 +69,7 @@ const gameReducer = (state = defaultState(), action: any) => { // TODO: Review t
         return state
 
     case RESTART:
-        return state
+        return defaultState()
 
     default:
         return state
