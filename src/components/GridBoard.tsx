@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { moveDown } from '../actions'
 import '../css/GridBoard.css'
@@ -19,7 +19,7 @@ function GridBoard() {
     // map rows
     const gridSquares = grid.map((rowArray, row) => {
         // map columns
-        return rowArray.map((square: any, col: number) => {
+        return rowArray.map((square: any, col: number) => { // eslint-disable-line @typescript-eslint/no-explicit-any
             // Find the block x and y on the shape grid
             // By subtracting the x and y from the col and the row we get the position of the upper left corner of the block array as if it was superimposed over the main grid
             const blockX = col - x
