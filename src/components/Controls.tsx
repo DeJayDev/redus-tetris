@@ -1,13 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Fragment } from 'react'
 import '../css/Controls.css'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { moveDown, moveLeft, moveRight, rotate } from '../actions'
-import { RootState } from '../reducers'
 
 
-function Controls(props: any) {
+function Controls() {
     const dispatch = useDispatch()
-    const isRunning = useSelector((state: RootState) => state.game.isRunning)
+    //const isRunning = useSelector((state: RootState) => state.game.isRunning)
 
     return <Fragment>
         <div className="controls">

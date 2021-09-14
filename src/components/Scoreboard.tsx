@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { pause, restart, resume } from '../actions'
 import '../css/Scoreboard.css'
 import { RootState } from '../reducers'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Scoreboard(props: any) { //TODO: fix type
+function Scoreboard() { //TODO: fix type
 
     const dispatch = useDispatch()
     const game = useSelector((state: RootState) => state.game)

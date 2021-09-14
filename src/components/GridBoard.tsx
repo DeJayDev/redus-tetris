@@ -1,10 +1,16 @@
-import { useSelector } from 'react-redux'
+import React, { useEffect, useRef } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { moveDown } from '../actions'
 import '../css/GridBoard.css'
 import { RootState } from '../reducers'
 import { shapes } from '../utils'
 import GridSquare from './GridSquare'
 
 function GridBoard() {
+    const requestRef = useRef<number>(0)
+    const lastUpdateTimeRef = useRef(0)
+    const progressTimeRef = useRef(0)
+    const dispatch = useDispatch()
     const game = useSelector((state: RootState) => state.game)
     const { grid, shape, rotation, x, y, isRunning, speed } = game
 
@@ -31,6 +37,28 @@ function GridBoard() {
         })
     })
 
+    const update = (time: number) => {
+        requestRef.current = requestAnimationFrame(update)
+        if (!isRunning) {
+            return 
+        }
+        if (!lastUpdateTimeRef.current) {
+            lastUpdateTimeRef.current = time
+        }
+        const deltaTime = time - lastUpdateTimeRef.current
+        progressTimeRef.current += deltaTime
+        if (progressTimeRef.current > speed) {
+            dispatch(moveDown())
+            progressTimeRef.current = 0
+        }
+        lastUpdateTimeRef.current = time
+    }
+
+    useEffect(() => {
+        requestRef.current = requestAnimationFrame(update)
+        return () => cancelAnimationFrame(requestRef.current)
+    }, [isRunning])
+
     return (
         <div className='grid-board'>
             {gridSquares}
@@ -40,6 +68,3 @@ function GridBoard() {
 }
 
 export default GridBoard
-
-//blockx >= 0 && blockx < block.length && blocky >= 0 && blocky < block.length
-//

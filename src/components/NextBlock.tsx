@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Fragment } from 'react'
 import '../css/NextBlock.css'
 import GridSquare from './GridSquare'
